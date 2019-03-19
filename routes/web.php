@@ -26,8 +26,8 @@ Route::get('register', 'Auth\RegisterController@showRegistrationForm')->name('re
 Route::post('register', 'Auth\RegisterController@register');
 
 //密码重置相关路由
-Route::get('password/reset', 'Auth\ForgetPasswordController@showLinkRequestForm')->name('password.request');
-Route::post('password/email', 'Auth\ForgetPasswordController@sendRequestLinkEmail')->name('password.eamil');
+Route::get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm')->name('password.request');
+Route::post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail')->name('password.email');
 Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm')->name('password.reset');
 Route::post('password/reset', 'Auth\ResetPasswordController@reset')->name('password.update');
 
